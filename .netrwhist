@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/iamcheyan/.config/autostart'
+let g:netrw_dirhist_2='/Applications/XAMPP/xamppfiles/htdocs/style'
+let g:netrw_dirhist_3='/Library/Preferences'
+let g:netrw_dirhist_4='/Volumes/File/htdocs/iamcheyan.com/wp-content/themes/iamcheyan/.git'
+let g:netrw_dirhist_5='/Volumes/Data/iamcheyan/Desktop/testBash'
+let g:netrw_dirhist_6='/Volumes/File/htdocs/uya100.com/home'
