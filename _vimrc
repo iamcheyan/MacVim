@@ -16,8 +16,8 @@ endif
 
 "使用pathogen管理插件
 call pathogen#infect()
-"syntax enable
-"syntax on					"语法高亮
+syntax enable
+syntax on					"语法高亮
 filetype plugin indent on	"打开文件类型检测
 
 "设置mapleader键
