@@ -2,4 +2,6 @@
 /file
 
 ###过滤的文件
+.VimballRecord
 .DS_Store
+.netrwhist
