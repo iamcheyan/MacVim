@@ -237,29 +237,27 @@ endf
 		":let g:vimim_custom_label=1
 		":let g:vimim_map='no-gi'	"关闭 gi 无菜单窗
 		":let g:vimim_map='tab_as_onekey'"
-"	snipMate				智能补全
-"	xml						XML文件自动补全与标签自动闭合,活用;;
-"	surround				快速替换/清除包围符号/标签
-"	mru						记录最近打开的文件(o在缓冲区打开,t在新标签打开)
+
+"	autoload/pathogen.vim	插件管理器
+"	MatchTag				显示配对的HTML标签
+"	mru.vim					记录最近打开的文件(o在缓冲区打开,t在新标签打开)
+"	"{{{
 		let MRU_File = $VIMFILES.'/file/_vim_mru_files'
 		let MRU_Max_Entries = 30	"记忆最近打开的文件数量
 		let MRU_Auto_Close = 1		"窗口打开与关闭(0/1)
 		nmap <leader>f :MRU<CR>
-"	autoload/pathogen.vim	插件管理器
-"	NERD_tree				文件管理,使用,-n启动
+	"}}}
+"	nerdtree				文件管理,使用,-n启动
 		nmap ,n :NERDTree
+"	snipMate				智能补全
+"	The-NERD-Commenter		快速注释
+"	vim-colors-solarized	配色,提供light和dark两种模式
+"	vim-project				项目管理插件,使用,-p启动
+		nmap ,p :Project ~/.vim/file/_vimprojects	"_vimprojects为指定的文件路径
 "	zencoding				使用c-y-,转换
-"	visualmark				带有颜色的可视书签
 "
 " -未使用git同步的插件:
-"	vim-colors-solarized	配色,提供light和dark两种模式
-"	project					项目管理插件,使用,-p启动
-"		"_vimprojects为指定的文件路径
-		nmap ,p :Project ~/.vim/file/_vimprojects
 "	after/syntax/css.vim	CSS颜色高亮
-"	NERD_commenter			快速注释
 "	load_template	 		新建文档模板插件,使用LoadTemplate
 		let g:template_path = $VIMFILES.'/template/'
-"	colorsel				VIM配色调整工具
-"	MatchTag				显示配对的HTML标签
 "}}}
