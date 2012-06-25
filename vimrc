@@ -2,6 +2,7 @@
 " File: _vimrc
 " Author: iamcheyan
 " Description: cheyan's vimrc
+" Blog: http://iamcheyan.com
 " Contact Me: me@iamcheyan.com
 " ---
 
@@ -57,8 +58,10 @@ set t_vb= " close visual bell
 
 "代码折叠
 :set fdm=marker		"对文中的标志折叠
-au BufWinLeave * silent mkview		"关闭文件的时候保存折叠信息
-au BufWinEnter * silent loadview	"每次文件启动时读取折叠信息
+
+"记录文件状态
+autocmd BufWinLeave * if expand('%') != '' && &buftype == '' | mkview | endif
+autocmd BufRead     * if expand('%') != '' && &buftype == '' | silent loadview | endif
 
 " 搜索时忽略大小写，但在有一个或以上大写字母时仍大小写敏感
 set ignorecase
@@ -75,6 +78,7 @@ syntax enable
 syntax on					"语法高亮
 filetype plugin indent on	"打开文件类型检测
 
+set showtabline=2	"显示标签
 set cursorline		"高亮光标所在的行
 set background=dark
 colorscheme solarized
@@ -120,10 +124,9 @@ endif
 
 "}}}
 
-" 标签"{{{
-" ---------------------------------------------------------------------
-set showtabline=2	"显示标签
+" 按键绑定{{{
 
+"标签
 nmap <C-t>   :tabnew<cr>
 nmap <C-p>   :tabprevious<cr>
 nmap <C-n>   :tabnext<cr>
@@ -144,12 +147,23 @@ map <D-8> 8gt
 map <D-9> 9gt
 map <D-0> :tablast<CR>
 
-"}}}
+" }}}
 
 " 格式"{{{
 " ---------------------------------------------------------------------
 set autoindent		"自动缩进
 set smartindent		"在一个新的语句块之后的行自动缩进到下一个级别
+
+" 指定文件类型高亮
+au BufNewFile,BufRead *.shtml setf html
+
+" 关于高亮
+:let hs_highlight_delimiters=1            " 高亮定界符
+:let hs_highlight_boolean=1               " 把True和False识别为关键字
+:let hs_highlight_types=1                 " 把基本类型的名字识别为关键字
+:let hs_highlight_more_types=1            " 把更多常用类型识别为关键字
+:let hs_highlight_debug=1                 " 高亮调试函数的名字
+:let hs_allow_hash_operator=1             " 阻止把#高亮为错误
 
 "在切换到 normal,insert,search 模式时使用英文输入法
 " set noimdisable
@@ -253,11 +267,14 @@ endf
 "	The-NERD-Commenter		快速注释
 "	vim-colors-solarized	配色,提供light和dark两种模式
 "	vim-project				项目管理插件,使用,-p启动
-		nmap ,p :Project ~/.vim/file/_vimprojects	"_vimprojects为指定的文件路径
+		nmap ,p :Project ~/.vim/file/_vimprojects
+		"_vimprojects为指定的文件路径
+"	xml.vim					使用gg=G格式化html
 "	zencoding				使用c-y-,转换
 "
 " -未使用git同步的插件:
 "	after/syntax/css.vim	CSS颜色高亮
+"	mark					标记高亮单词,m
 "	load_template	 		新建文档模板插件,使用LoadTemplate
 		let g:template_path = $VIMFILES.'/template/'
 "}}}
