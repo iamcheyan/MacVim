@@ -4,3 +4,27 @@
 [submodule "bundle/mru"]
 	path = bundle/mru
 	url = https://github.com/vim-scripts/mru.vim.git
+[submodule "bundle/matchTag"]
+	path = bundle/matchTag
+	url = https://github.com/vim-scripts/MatchTag.git
+[submodule "bundle/checksyntax"]
+	path = bundle/checksyntax
+	url = https://github.com/tomtom/checksyntax_vim.git
+[submodule "bundle/The-NERD-Commenter"]
+	path = bundle/The-NERD-Commenter
+	url = https://github.com/vim-scripts/The-NERD-Commenter.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
+[submodule "bundle/solarized"]
+	path = bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/zencoding"]
+	path = bundle/zencoding
+	url = https://github.com/mattn/zencoding-vim.git
+[submodule "bundle/xml"]
+	path = bundle/xml
+	url = https://github.com/vim-scripts/xml.vim.git
+[submodule "bundle/project"]
+	path = bundle/project
+	url = https://github.com/shemerey/vim-project.git
