@@ -36,4 +36,4 @@
 	url = https://github.com/vim-scripts/SuperTab.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
-	url = https://github.com/vim-scripts/SuperTab.git
+	url = https://github.com/iamcheyan/MacVim
