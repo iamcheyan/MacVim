@@ -208,8 +208,6 @@ vmap <s-tab> <gv
 
 " 语法"{{{
 " ---------------------------------------------------------------------
-let g:SuperTabRetainCompletionType=2
-let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 
 " 打开javascript折叠
 let b:javascript_fold=1
@@ -265,7 +263,18 @@ endf
 		nmap ,n :NERDTree
 "	snipMate				智能补全
 "	The-NERD-Commenter		快速注释
-"	vim-colors-solarized	配色,提供light和dark两种模式
+"	superTab				Tab键补全
+		{{{
+			let g:SuperTabRetainCompletionType=2
+			let g:SuperTabDefaultCompletionType="<C-N>"
+		}}}
+"	NeoComplCache			自动补全
+	"	"{{{
+			let g:neocomplcache_enable_at_startup = 1	"默认开启自动补全
+			" 使用tab补全
+			"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+			"inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
+	"	}}}"
 "	vim-project				项目管理插件,使用,-p启动
 		nmap ,p :Project ~/.vim/file/_vimprojects
 		"_vimprojects为指定的文件路径
@@ -273,6 +282,7 @@ endf
 "	zencoding				使用c-y-,转换
 "
 " -未使用git同步的插件:
+"	vim-colors-solarized	配色,提供light和dark两种模式
 "	after/syntax/css.vim	CSS颜色高亮
 "	mark					标记高亮单词,m
 "	load_template	 		新建文档模板插件,使用LoadTemplate
