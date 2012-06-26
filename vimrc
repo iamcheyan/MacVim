@@ -54,7 +54,7 @@ set autochdir		"自动切换当前目录为当前文件所在的目录
 "关闭遇到错误时的声音提示
 set noerrorbells
 set novisualbell
-set t_vb= " close visual bell
+set vb t_vb=
 
 "代码折叠
 :set fdm=marker		"对文中的标志折叠
@@ -103,7 +103,7 @@ if has('gui_running')
 	set guioptions-=T " 隐藏工具栏
 	set guioptions-=m " 隐藏菜单栏
 	set guioptions-=L " 隐藏左侧滚动条
-	set showtabline=0 " 隐藏Tab栏
+	set showtabline=2 " 显示Tab栏
 	set guioptions+=r	"显示gui右边滚动条
 
 	if has("gui_macvim")
