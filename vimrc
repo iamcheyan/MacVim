@@ -87,10 +87,6 @@ colorscheme solarized
 "guifg为字符颜色,guibg为字符背景颜色
 hi SpecialKey guifg=#003f53 guibg=#042b37
 
-"字体
-set guifont=Monaco:h12
-set lines=200 columns=120
-
 " 状态栏
 set showcmd			"状态栏显示目前所执行的指令
 set laststatus=2	"总是显示状态栏status line
@@ -105,6 +101,10 @@ if has('gui_running')
 	set guioptions-=L " 隐藏左侧滚动条
 	set showtabline=2 " 显示Tab栏
 	set guioptions+=r	"显示gui右边滚动条
+	
+	"字体
+	set guifont=Monaco:h12
+	set lines=200 columns=120
 
 	if has("gui_macvim")
 		set imdisable	"Set input method off
@@ -125,6 +125,12 @@ endif
 "}}}
 
 " 按键绑定{{{
+
+" 插入模式输入中文完毕回到普通模式时禁用输入法
+se imd
+au InsertEnter * se noimd
+au InsertLeave * se imd
+au FocusGained * se imd
 
 "标签
 nmap <C-t>   :tabnew<cr>
@@ -250,6 +256,10 @@ endf
 		":let g:vimim_map='no-gi'	"关闭 gi 无菜单窗
 		":let g:vimim_map='tab_as_onekey'"
 
+"Powerline				状态栏增强插件
+"		"需要安装bundle/Powerline/fontpatcher目录下的dejiavu Powerline字体
+		let Powerline_symbols = 'compatible'
+		let g:Powerline_symbols = 'fancy'
 "	autoload/pathogen.vim	插件管理器
 "	MatchTag				显示配对的HTML标签
 "	mru.vim					记录最近打开的文件(o在缓冲区打开,t在新标签打开)
@@ -264,10 +274,10 @@ endf
 "	snipMate				智能补全
 "	The-NERD-Commenter		快速注释
 "	superTab				Tab键补全
-		{{{
+"		{{{
 			let g:SuperTabRetainCompletionType=2
 			let g:SuperTabDefaultCompletionType="<C-N>"
-		}}}
+"		}}}
 "	NeoComplCache			自动补全
 	"	"{{{
 			let g:neocomplcache_enable_at_startup = 1	"默认开启自动补全

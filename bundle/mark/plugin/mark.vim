@@ -297,9 +297,9 @@ endif
 if !hasmapto('<Plug>MarkRegex', 'v')
 	xmap <unique> <silent> <Leader>r <Plug>MarkRegex
 endif
-if !hasmapto('<Plug>MarkClear', 'n')
-	nmap <unique> <silent> <Leader>n <Plug>MarkClear
-endif
+"if !hasmapto('<Plug>MarkClear', 'n')
+	"nmap <unique> <silent> <Leader>n <Plug>MarkClear
+"endif
 " No default mapping for <Plug>MarkAllClear.
 " No default mapping for <Plug>MarkToggle.
 
