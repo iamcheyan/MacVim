@@ -103,7 +103,7 @@ if has('gui_running')
 	set guioptions+=r	"显示gui右边滚动条
 	
 	"字体
-	set guifont=Monaco:h12
+	set guifont=Menlo:h12
 	set lines=200 columns=120
 
 	if has("gui_macvim")
@@ -111,9 +111,9 @@ if has('gui_running')
 		lcd ~/Desktop/	"如果为空文件，则自动设置当前目录为桌面
 		set autochdir	"自动切换到文件当前目录
 
-		"清理菜单
-		aunmenu Window
-		aunmenu Tools
+		" 清理菜单
+		" aunmenu Window
+		" aunmenu Tools
 	endif
 else
 	set ambiwidth=single
@@ -162,6 +162,7 @@ set smartindent		"在一个新的语句块之后的行自动缩进到下一个�
 
 " 指定文件类型高亮
 au BufNewFile,BufRead *.shtml setf html
+au BufNewFile,BufRead *.less setf css
 
 " 关于高亮
 :let hs_highlight_delimiters=1            " 高亮定界符
@@ -172,9 +173,9 @@ au BufNewFile,BufRead *.shtml setf html
 :let hs_allow_hash_operator=1             " 阻止把#高亮为错误
 
 "在切换到 normal,insert,search 模式时使用英文输入法
-" set noimdisable
-" set iminsert=0
-" set imsearch=0
+set noimdisable
+set iminsert=0
+set imsearch=0
 
 "缩进相关的设置
 set ts=4			"tabstop    制表符显示的位宽
